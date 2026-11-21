@@ -1,0 +1,492 @@
+/* ==========================================================================
+   NSU RDS 2026 — MODULE 20 (RDS Administration & System Monitoring)
+   Pure Light Mode, Ultra-Minimal, Squareish High-Density Operational Theme
+   Strict Neutral Monochrome: Zero Blue Tint, Zero Gradients, Zero Bubbly Curves
+   ========================================================================== */
+
+.root {
+    -fx-font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    -fx-background-color: #FAFAFA;
+    -fx-text-fill: #09090B;
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY & MONOSPACE HELPERS
+   -------------------------------------------------------------------------- */
+.font-mono {
+    -fx-font-family: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.text-muted {
+    -fx-text-fill: #71717A;
+}
+
+.text-primary {
+    -fx-text-fill: #09090B;
+}
+
+/* --------------------------------------------------------------------------
+   TOP UTILITY BAR (44px, Razor-Thin, Pure White, Crisp Border)
+   -------------------------------------------------------------------------- */
+.top-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #E4E4E7 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 0 16px 0 16px;
+    -fx-pref-height: 44px;
+    -fx-min-height: 44px;
+    -fx-max-height: 44px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.top-bar-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #09090B;
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+    -fx-letter-spacing: 0.5px;
+}
+
+.top-bar-divider {
+    -fx-background-color: #E4E4E7;
+    -fx-pref-width: 1px;
+    -fx-min-width: 1px;
+    -fx-max-width: 1px;
+    -fx-pref-height: 20px;
+    -fx-min-height: 20px;
+    -fx-max-height: 20px;
+}
+
+/* Squareish Segmented Nav Buttons */
+.nav-segment-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #71717A;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 12px 5px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.nav-segment-btn:hover {
+    -fx-background-color: #F4F4F5;
+    -fx-text-fill: #09090B;
+}
+
+.nav-segment-btn-active {
+    -fx-background-color: #09090B;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 12px 5px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.operator-badge {
+    -fx-background-color: #F4F4F5;
+    -fx-border-color: #E4E4E7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 3px 8px 3px 8px;
+    -fx-font-size: 11px;
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+    -fx-text-fill: #71717A;
+}
+
+.connection-dot {
+    -fx-background-color: #10B981;
+    -fx-background-radius: 999px;
+    -fx-min-width: 7px;
+    -fx-min-height: 7px;
+    -fx-max-width: 7px;
+    -fx-max-height: 7px;
+}
+
+.connection-dot-offline {
+    -fx-background-color: #EAB308;
+    -fx-background-radius: 999px;
+    -fx-min-width: 7px;
+    -fx-min-height: 7px;
+    -fx-max-width: 7px;
+    -fx-max-height: 7px;
+}
+
+/* --------------------------------------------------------------------------
+   WORKSPACE & METRIC STRIP (Squareish, High-Density Cards)
+   -------------------------------------------------------------------------- */
+.workspace-container {
+    -fx-background-color: #FAFAFA;
+    -fx-padding: 14px 16px 14px 16px;
+}
+
+.stat-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E4E4E7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 14px 10px 14px;
+}
+
+.stat-box-title {
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #71717A;
+    -fx-text-transform: uppercase;
+}
+
+.stat-box-value {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #09090B;
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+}
+
+.stat-box-context {
+    -fx-font-size: 11px;
+    -fx-text-fill: #71717A;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT INSPECTOR / EDITOR PANEL (320px Pure White)
+   -------------------------------------------------------------------------- */
+.inspector-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E4E4E7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 16px;
+    -fx-pref-width: 320px;
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+}
+
+.inspector-header {
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #09090B;
+    -fx-border-color: transparent transparent #E4E4E7 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 0 0 8px 0;
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+}
+
+.inspector-field-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #71717A;
+}
+
+/* --------------------------------------------------------------------------
+   TABLE CONTAINER & FLAT TABLEVIEW POLISH (Pure White, Zero 3D Bevels)
+   -------------------------------------------------------------------------- */
+.table-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E4E4E7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 0;
+}
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+/* Remove 3D header borders, make flat #F4F4F5 */
+.table-view .column-header-background {
+    -fx-background-color: #F4F4F5;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent transparent #E4E4E7 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #E4E4E7 transparent transparent;
+    -fx-border-width: 0 1px 0 0;
+    -fx-padding: 8px 10px 8px 10px;
+    -fx-size: 34px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #71717A;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Flat Table Rows */
+.table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent transparent #F4F4F5 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 36px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #EDEDEF;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #F4F4F5;
+    -fx-text-fill: #09090B;
+}
+
+.table-cell {
+    -fx-padding: 6px 10px 6px 10px;
+    -fx-text-fill: #09090B;
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: transparent;
+}
+
+.table-cell.mono-cell {
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+    -fx-font-size: 11px;
+}
+
+/* Transparent Empty Rows */
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #71717A;
+    -fx-font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   FORM INPUTS (Flat, 5px radius, #FFFFFF with #D4D4D8 border)
+   -------------------------------------------------------------------------- */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 6px 10px 6px 10px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #09090B;
+    -fx-prompt-text-fill: #A1A1AA;
+}
+
+.text-field:focused {
+    -fx-border-color: #09090B;
+    -fx-background-color: #FFFFFF;
+}
+
+.combo-box-base {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 3px 6px 3px 6px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #09090B;
+    -fx-cursor: hand;
+}
+
+.combo-box-base:focused {
+    -fx-border-color: #09090B;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #09090B;
+    -fx-font-size: 12px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E4E4E7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 4px;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #F4F4F5;
+}
+
+.date-picker {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.date-picker .text-field {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   FLAT BUTTONS (Solid Black Primary, Crisp White Ghost, Neutral Destructive)
+   -------------------------------------------------------------------------- */
+.btn-primary {
+    -fx-background-color: #09090B;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: 700;
+    -fx-font-size: 12px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 7px 14px 7px 14px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #27272A;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #3F3F46;
+}
+
+.btn-secondary {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #18181B;
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 6px 12px 6px 12px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #F4F4F5;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #E4E4E7;
+}
+
+.btn-destructive {
+    -fx-background-color: #FEF2F2;
+    -fx-text-fill: #DC2626;
+    -fx-font-weight: 700;
+    -fx-font-size: 12px;
+    -fx-border-color: #FECACA;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 6px 12px 6px 12px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+.btn-destructive:hover {
+    -fx-background-color: #FEE2E2;
+}
+
+.btn-icon-compact {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #18181B;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 3px 8px 3px 8px;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.btn-icon-compact:hover {
+    -fx-background-color: #F4F4F5;
+}
+
+/* --------------------------------------------------------------------------
+   SQUAREISH MONOCHROME BADGES & TAGS
+   -------------------------------------------------------------------------- */
+.tag-base {
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 2px 7px 2px 7px;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+    -fx-font-family: 'Consolas', 'JetBrains Mono', monospace;
+    -fx-alignment: CENTER;
+}
+
+.tag-neutral {
+    -fx-background-color: #F4F4F5;
+    -fx-border-color: #D4D4D8;
+    -fx-border-width: 1px;
+    -fx-text-fill: #18181B;
+}
+
+.tag-active {
+    -fx-background-color: #F4F4F5;
+    -fx-border-color: #09090B;
+    -fx-border-width: 1px;
+    -fx-text-fill: #09090B;
+}
+
+.tag-alert {
+    -fx-background-color: #FEF2F2;
+    -fx-border-color: #FECACA;
+    -fx-border-width: 1px;
+    -fx-text-fill: #DC2626;
+}
+
+.tag-exam {
+    -fx-background-color: #F4F4F5;
+    -fx-border-color: #71717A;
+    -fx-border-width: 1px;
+    -fx-text-fill: #09090B;
+}
+
+/* --------------------------------------------------------------------------
+   FLAT MINIMAL SCROLLBAR
+   -------------------------------------------------------------------------- */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-pref-width: 8px;
+    -fx-pref-height: 8px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #D4D4D8;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #A1A1AA;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}

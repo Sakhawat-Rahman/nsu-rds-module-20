@@ -1,0 +1,10 @@
+# Git text normalization
+* text=auto
+
+# Static resources
+*.css linguist-vendored=true
+src/main/resources/** linguist-vendored=true
+
+# Source code and database scripts
+*.java linguist-detectable=true
+*.sql linguist-detectable=true
